@@ -1,0 +1,19 @@
+:host-context(app-questions) {
+  .questions {
+    width: 100%;
+
+    .separator {
+      height: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    app-accordion {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .error, .loading {
+      padding: 30px;
+    }
+  }
+}

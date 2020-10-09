@@ -1,0 +1,60 @@
+// animations for the plus sign expanding and collapsing a question
+@-moz-keyframes open {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes open {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+@keyframes open {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+
+// animations for the plus sign collapsing a question
+@-moz-keyframes close {
+  from {
+    -moz-transform: rotate(45deg);
+  }
+  to {
+    -moz-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}

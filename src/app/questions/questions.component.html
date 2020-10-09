@@ -1,0 +1,22 @@
+<div class="questions">
+  <h2 class="title">{{title}}</h2>
+  <div class="separator"></div>
+
+  <!-- accordion component displaying the questions received from the backend -->
+  <app-accordion *ngIf="questions$ | async as questions; else noDataTemplate"
+    [questions]="questions"></app-accordion>
+
+  <!-- render this template while waiting backend data -->
+  <ng-template #noDataTemplate>
+    <!-- display a dummy error message if the HTTP request fails -->
+    <div class="error" *ngIf="error$ | async; else loading">
+      Error loading the questions.
+    </div>
+    <!-- display a skeleton loader while waiting for backend data or for an error -->
+    <ng-template #loading>
+      <div class="loading">
+        <ngx-skeleton-loader count="5"></ngx-skeleton-loader>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

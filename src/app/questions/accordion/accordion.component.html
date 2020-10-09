@@ -1,0 +1,14 @@
+<mat-accordion displayMode="flat" hideToggle="true">
+  <mat-expansion-panel *ngFor="let question of questions; trackBy: trackByFunction">
+    <mat-expansion-panel-header collapsedHeight="auto" expandedHeight="auto">
+      <mat-panel-title>
+        <!-- question number -->
+        <span class="question-index">Q{{question.id}}</span>
+        {{question.question}}
+      </mat-panel-title>
+      <!-- custom expand arrow -->
+      <span class="custom-indicator"><span class="plus"></span></span>
+    </mat-expansion-panel-header>
+    <p>{{question.answer}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

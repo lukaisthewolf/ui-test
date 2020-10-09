@@ -1,0 +1,10 @@
+:host(app-root) {
+  display: block;
+  width: 100%;
+
+  app-questions {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
+}

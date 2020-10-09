@@ -1,0 +1,92 @@
+mat-accordion {
+  .question-index {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 50px;
+  }
+
+  mat-expansion-panel {
+    box-shadow: none;
+
+    // override default properties to match design - without rounded corners
+    &:first-of-type {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:last-of-type {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    // style the expanded question
+    &.mat-expanded {
+      border-bottom: 2px solid black;
+      mat-expansion-panel-header {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-bottom: 0;
+        .custom-indicator {
+          .plus {
+            // animations for expanding a question
+            -webkit-animation:open 0.5s ease;
+            -moz-animation:open 0.5s ease;
+            animation:open 0.5s ease;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+    }
+
+    // style the header of each question
+    mat-expansion-panel-header {
+      padding: 20px;
+      height: auto;
+      border-bottom: 2px solid black;
+      font-family: Oswald, Roboto, "Helvetica Neue", sans-serif;
+
+      ::ng-deep {
+        .mat-content {
+          align-items: center;
+          mat-panel-title {
+            align-items: center;
+          }
+        }
+      }
+
+      .custom-indicator {
+        display: inline-block;
+        text-align: center;
+        min-width: 40px;
+        height: 40px;
+        background-color: #FEC800;
+
+        .plus {
+          display: inline-block;
+          position: relative;
+          top: calc(50% - 10px);
+          width: 20px;
+          height: 20px;
+          background-image: url(../../../assets/svgs/plus-icon.svg);
+
+          // animations for collapsing a question
+          -webkit-animation:close 0.5s ease;
+          -moz-animation:close 0.5s ease;
+          animation:close 0.5s ease;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    // style the content of each question
+    &::ng-deep {
+      .mat-expansion-panel-content {
+        // style custom font family
+        font-family: Oswald, Roboto, "Helvetica Neue", sans-serif;
+
+        .mat-expansion-panel-body {
+          padding-top: 16px;
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+}
